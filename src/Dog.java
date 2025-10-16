@@ -1,15 +1,14 @@
-public class Dog {
+public class Dog extends Animal implements Swimable{
     private static final int MAX_RUN = 500;
     private static final int MAX_SWIM = 10;
 
-    private static int countOfDogs = 0;
+    private static int countOfDogs;
 
-    public String name;
 
     // Конструктор
     public Dog(String name) {
+        super(name);
         countOfDogs++;
-        this.name = name;
     }
 
     // Возврщаем количество созданных собак
@@ -17,27 +16,29 @@ public class Dog {
         return countOfDogs;
     }
 
+    @Override
     public void run(int distance) {
-        if(distance < 0) {
-            System.out.println("Некорректный ввод, собака " + name + " осталась на месте.");
+        if (distance < 0) {
+            System.out.println(distance + " -> Некорректная команда, собака " + getName() + " осталась на месте.");
         } else if (distance == 0) {
-            System.out.println("Cобака " + name + " осталась на месте.");
+            System.out.println(distance + " -> Cобака " + getName() + " осталась на месте.");
         } else if (distance > MAX_RUN) {
-            System.out.println("Cобака " + name + " пробежала только " + MAX_RUN + " метров и устала.");
+            System.out.println(distance + " -> Cобака " + getName() + " пробежала только " + MAX_RUN + " метров и устала.");
         } else {
-            System.out.println("Cобака " + name + " пробежала " + distance + " метров.");
+            System.out.println(distance + " -> Cобака " + getName() + " пробежала " + distance + " метров.");
         }
     }
 
+    @Override
     public void swim(int distance) {
-        if(distance < 0) {
-            System.out.println("Некорректный ввод, собака " + name + " осталась на месте.");
+        if (distance < 0) {
+            System.out.println(distance + " -> Некорректная команда, собака " + getName() + " осталась на месте.");
         } else if (distance == 0) {
-            System.out.println("Cобака " + name + " не поплыла.");
+            System.out.println(distance + " -> Cобака " + getName() + " не поплыла.");
         } else if (distance > MAX_RUN) {
-            System.out.println("Cобака " + name + " проплыла только " + MAX_SWIM + " метров и устала.");
+            System.out.println(distance + " -> Cобака " + getName() + " проплыла только " + MAX_SWIM + " метров и устала.");
         } else {
-            System.out.println("Cобака " + name + " проплыла " + distance + " метров.");
+            System.out.println(distance + " -> Cобака " + getName() + " проплыла " + distance + " метров.");
         }
     }
 }

@@ -1,11 +1,12 @@
-public class Cat {
+public class Cat extends Animal {
 
     private static final int MAX_RUN = 200;
 
-    private static int countOfCats = 0;
+    private static int countOfCats;
 
     // Конструктор
-    public Cat() {
+    public Cat(String name) {
+        super(name);
         countOfCats++;
     }
 
@@ -15,18 +16,14 @@ public class Cat {
     }
 
     public void run(int distance) {
-        if(distance < 0) {
-            System.out.println("Некорректный ввод, кот остался на месте.");
+        if (distance < 0) {
+            System.out.println(distance + " -> Некорректная команда, кот остался на месте.");
         } else if (distance == 0) {
-            System.out.println("Кот остался на месте.");
+            System.out.println(distance + " -> Кот остался на месте.");
         } else if (distance > MAX_RUN) {
-            System.out.println("Кот пробежал только " + MAX_RUN + " метров и устал.");
+            System.out.println(distance + " -> Кот пробежал только " + MAX_RUN + " метров и устал.");
         } else {
-            System.out.println("Кот пробежал " + distance + " метров.");
+            System.out.println(distance + " -> Кот пробежал " + distance + " метров.");
         }
-    }
-
-    public void swim(int distance) {
-        System.out.println("Коты не плавают, просите собаку.");
     }
 }

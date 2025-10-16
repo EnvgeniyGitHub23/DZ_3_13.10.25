@@ -36,19 +36,20 @@ public class Main {
         dogBobik.swim(5);
 
 
-        Cat cat1 = new Cat();
+        Cat catMurzik = new Cat("Мурзик");
         System.out.println("Создано котов: " + Dog.getCountOfAnimals());
 
         System.out.println("\nДаем коту команды бежать:");
-        cat1.run(-1);
-        cat1.run(0);
-        cat1.run(1000);
-        cat1.run(5);
+        catMurzik.run(-1);
+        catMurzik.run(0);
+        catMurzik.run(1000);
+        catMurzik.run(5);
 
-        System.out.println("\nДаем коту команды плыть:");
-        cat1.swim(-1);
-        cat1.swim(0);
-        cat1.swim(1000);
-        cat1.swim(5);
+        // У Cat нет метода swim
+//        System.out.println("\nДаем коту команды плыть:");
+//        cat1.swim(-1);
+//        cat1.swim(0);
+//        cat1.swim(1000);
+//        cat1.swim(5);
     }
 }
