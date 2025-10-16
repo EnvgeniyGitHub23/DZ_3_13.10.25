@@ -4,9 +4,12 @@ public class Dog {
 
     private static int countOfDogs = 0;
 
+    public String name;
+
     // Конструктор
-    public Dog() {
+    public Dog(String name) {
         countOfDogs++;
+        this.name = name;
     }
 
     // Возврщаем количество созданных собак
@@ -16,25 +19,25 @@ public class Dog {
 
     public void run(int distance) {
         if(distance < 0) {
-            System.out.println("Некорректный ввод, собака осталась на месте.");
+            System.out.println("Некорректный ввод, собака " + name + " осталась на месте.");
         } else if (distance == 0) {
-            System.out.println("Cобака осталась на месте.");
+            System.out.println("Cобака " + name + " осталась на месте.");
         } else if (distance > MAX_RUN) {
-            System.out.println("Cобака пробежала только " + MAX_RUN + " метров и устала.");
+            System.out.println("Cобака " + name + " пробежала только " + MAX_RUN + " метров и устала.");
         } else {
-            System.out.println("Cобака пробежала " + distance + " метров.");
+            System.out.println("Cобака " + name + " пробежала " + distance + " метров.");
         }
     }
 
     public void swim(int distance) {
         if(distance < 0) {
-            System.out.println("Некорректный ввод, собака осталась на месте.");
+            System.out.println("Некорректный ввод, собака " + name + " осталась на месте.");
         } else if (distance == 0) {
-            System.out.println("Cобака не поплыла.");
+            System.out.println("Cобака " + name + " не поплыла.");
         } else if (distance > MAX_RUN) {
-            System.out.println("Cобака проплыла только " + MAX_SWIM + " метров и устала.");
+            System.out.println("Cобака " + name + " проплыла только " + MAX_SWIM + " метров и устала.");
         } else {
-            System.out.println("Cобака проплыла " + distance + " метров.");
+            System.out.println("Cобака " + name + " проплыла " + distance + " метров.");
         }
     }
 }

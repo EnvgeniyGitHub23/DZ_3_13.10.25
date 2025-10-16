@@ -17,35 +17,35 @@ import java.sql.SQLOutput;
 
 public class Main {
     public static void main(String[] args) {
-        Dog dog1 = new Dog();
+        Dog dogBobik = new Dog("Бобик");
         System.out.println("Создано собак: " + Dog.getCountOfAnimals());
 
-        Dog dog2 = new Dog();
+        Dog dogSharik = new Dog("Шарик");
         System.out.println("Создано собак: " + Dog.getCountOfAnimals());
 
-        System.out.println("\nДаем собаке команды бежать");
-        dog1.run(-1);
-        dog1.run(0);
-        dog1.run(1000);
-        dog1.run(5);
+        System.out.println("\nДаем собаке команды бежать:");
+        dogBobik.run(-1);
+        dogBobik.run(0);
+        dogBobik.run(1000);
+        dogBobik.run(5);
 
-        System.out.println("\nДаем собаке команды плыть");
-        dog1.swim(-1);
-        dog1.swim(0);
-        dog1.swim(1000);
-        dog1.swim(5);
+        System.out.println("\nДаем собаке команды плыть:");
+        dogBobik.swim(-1);
+        dogBobik.swim(0);
+        dogBobik.swim(1000);
+        dogBobik.swim(5);
 
 
         Cat cat1 = new Cat();
         System.out.println("Создано котов: " + Dog.getCountOfAnimals());
 
-        System.out.println("\nДаем коту команды бежать");
+        System.out.println("\nДаем коту команды бежать:");
         cat1.run(-1);
         cat1.run(0);
         cat1.run(1000);
         cat1.run(5);
 
-        System.out.println("\nДаем коту команды плыть");
+        System.out.println("\nДаем коту команды плыть:");
         cat1.swim(-1);
         cat1.swim(0);
         cat1.swim(1000);
